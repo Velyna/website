@@ -1,0 +1,112 @@
+/* Universal Rules */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.115fr 1.885fr;
+    grid-gap: 0px 0px;
+    grid-template-areas:
+        "navbar"
+        "content";
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.grid-navbar {
+    grid-area: "navbar";
+    background-color: #000000;
+}
+
+.flex-navbar {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-content {
+    grid-area: "content";
+    background-color: #202020;
+    overflow-y: auto;
+}
+
+.flex-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.flex-intro {
+    display: block;
+    border: 1px solid #FF0000;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    text-align: center;
+    order: 0;
+}
+
+.flex-twitch {
+    display: block;
+    border: 1px solid #FF0000;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.flex-youtube {
+    display: block;
+    border: 1px solid #FF0000;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.flex-footer {
+    display: block;
+    border: 1px solid #FF0000;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.hide { display:none; }
+
+/* Optional: The following css just makes sure the twitch video stays responsive */
+#twitch {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+#twitch object, #twitch iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
