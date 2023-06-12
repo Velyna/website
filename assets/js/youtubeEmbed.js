@@ -16,7 +16,7 @@ function generateThumbnail(data) {
         const thumbnailTemplate = `
             <div class="col l3 m6 margin-bottom">
                 <div class="display-container">
-                    <iframe width="340" height="215" src="${embedURL}" title="YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="340" height="215" src="${embedURL}" title="YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         `
