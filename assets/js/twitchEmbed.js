@@ -1,4 +1,4 @@
-function runTwitchEmbed(Twitch) {
+function runTwitchEmbed() {
 
     function initiate() {
         player.addEventListener(Twitch.Player.ONLINE, handleOnline);
@@ -35,5 +35,3 @@ function runTwitchEmbed(Twitch) {
         console.log('Twitch Error: ', error);
     }
 };
-
-export { runTwitchEmbed };
