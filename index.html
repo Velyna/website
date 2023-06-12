@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <script src="./assets/js/main.js"></script>
-</head>
-<body>
-    <div class="grid-container">
-        <div class="grid-navbar">
-            <div class="flex-navbar">
-                HOME
-                BUILDS
-                FAQ
-            </div>
-        </div>
-        <div class="grid-content">
-            <div class="flex-content">
-                <div class="flex-intro">
-                    Intro
-                </div>
-                <div class="flex-twitch">
-                    <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 
-                    <div id="twitch" class="hide">
-                    </div>
-                  
-                    <script type="text/javascript">
-                    // This needs a webserver?
-                      var options = {
-                        channel: "velyna", // TODO: Change this to the streams username you want to embed
-                        width: 640,
-                        height: 360,
-                        parent: ['localhost', 'velyna.net']
-                      };
-                      var player = new Twitch.Player("twitch", options);
-                  
-                      player.addEventListener(Twitch.Player.READY, initiate)
-                  
-                      function initiate() {
-                        player.addEventListener(Twitch.Player.ONLINE, handleOnline);
-                        player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-                        player.removeEventListener(Twitch.Player.READY, initiate);
-                      }
-                  
-                      function handleOnline() {
-                        document.getElementById("twitch").classList.remove('hide');
-                        player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
-                        player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-                        player.setMuted(false);
-                      }
-                  
-                      function handleOffline() {
-                        document.getElementById("twitch").classList.add('hide');
-                        player.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
-                        player.addEventListener(Twitch.Player.ONLINE, handleOnline);
-                        player.setMuted(true);
-                      }
-                    </script>
-                </div>
-                <div class="flex-youtube">
-                    <!-- Need to figure out JSON client side solution -->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL9w6GAz6eu4-L9t6KSC1DeZ2ejxS5AorB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="flex-footer">
-                    Footer
-                </div>
+<head>
+    <title>Velyna.net</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <script type="module" src="./assets/js/main.js"></script>
+    <!-- <script type="module" src="./assets/js/twitchEmbed.js"></script> -->
+</head>
+
+<body>
+
+    <!-- Navbar (Top Float) -->
+    <div class="layout-top">
+        <div class="navbar white wide padding card">
+            <a href="#home" class="navbar-item button">TV/Velyna</a>
+            <!-- Float links to the right. Hide them on small screens -->
+            <div class="right hide-small">
+                <a href="#projects" class="navbar-item button">Home</a>
+                <a href="#about" class="navbar-item button">Builds</a>
+                <a href="#contact" class="navbar-item button button-last">FAQ</a>
             </div>
         </div>
-    </div> 
+    </div>
+
+    <!-- Page content -->
+    <div class="content padding" style="max-width:1564px">
+        
+        <!-- Twitch Section -->
+        <div class="container padding-32">
+            <h3 class="border-bottom border-light-grey padding-16">Twitch</h3>
+        </div>
+
+        <div class="header-content wide" style="max-width:1500px">
+            <div id="twitch" class="">
+                <!-- Dynamically Populated -->
+            </div>
+        </div>
+
+        <!-- Youtube Section -->
+        <div class="container padding-32" id="projects">
+            <h3 class="border-bottom border-light-grey padding-16">Youtube Videos</h3>
+        </div>
+
+        <div id="youtube-videos">
+            <!-- Dynamically Populated -->
+        </div>
+
+        <!-- About Section -->
+        <div class="container padding-32" id="about">
+            <h3 class="border-bottom border-light-grey padding-16">About</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Excepteur sint
+                occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
+
+        <!-- End page content -->
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="center black padding-16">
+        <p>Footer Content</p>
+    </footer>
+
 </body>
 
 </html>
