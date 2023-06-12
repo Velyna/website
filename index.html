@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <script src="./assets/js/main.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+    <!-- <script type="module" src="./assets/js/twitchEmbed.js"></script> -->
 </head>
 
 <body>
@@ -33,42 +34,9 @@
         </div>
 
         <div class="header-content wide" style="max-width:1500px">
-            <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
-
             <div id="twitch" class="">
+                <!-- Dynamically Populated -->
             </div>
-          
-            <script type="text/javascript">
-              var options = {
-                channel: "velyna",
-                width: 640,
-                height: 360,
-                parent: ['localhost', 'velyna.net']
-              };
-              var player = new Twitch.Player("twitch", options);
-          
-              player.addEventListener(Twitch.Player.READY, initiate)
-          
-              function initiate() {
-                player.addEventListener(Twitch.Player.ONLINE, handleOnline);
-                player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-                player.removeEventListener(Twitch.Player.READY, initiate);
-              }
-          
-              function handleOnline() {
-                document.getElementById("twitch").classList.remove('hide');
-                player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
-                player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-                player.setMuted(false);
-              }
-          
-              function handleOffline() {
-                document.getElementById("twitch").classList.add('hide');
-                player.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
-                player.addEventListener(Twitch.Player.ONLINE, handleOnline);
-                player.setMuted(true);
-              }
-            </script>
         </div>
 
         <!-- Youtube Section -->
@@ -76,50 +44,8 @@
             <h3 class="border-bottom border-light-grey padding-16">Youtube Videos</h3>
         </div>
 
-        <div class="row-padding">
-            <div class="col l3 m6 margin-bottom">
-                <div class="display-container">
-                    <iframe width="340" height="215" src="https://www.youtube.com/embed/videoseries?list=PL9w6GAz6eu4-L9t6KSC1DeZ2ejxS5AorB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col l3 m6 margin-bottom">
-                <div class="display-container">
-                    <iframe width="340" height="215" src="https://www.youtube.com/embed/videoseries?list=PL9w6GAz6eu4-L9t6KSC1DeZ2ejxS5AorB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col l3 m6 margin-bottom">
-                <div class="display-container">
-                    <iframe width="340" height="215" src="https://www.youtube.com/embed/videoseries?list=PL9w6GAz6eu4-L9t6KSC1DeZ2ejxS5AorB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col l3 m6 margin-bottom">
-                <div class="display-container">
-                    <iframe width="340" height="215" src="https://www.youtube.com/embed/videoseries?list=PL9w6GAz6eu4-L9t6KSC1DeZ2ejxS5AorB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-
-        <div class="row-padding">
-            <div class="col l3 m6 margin-bottom">
-                <div class="display-container">
-                    <iframe width="340" height="215" src="https://www.youtube.com/embed/videoseries?list=PL9w6GAz6eu4-L9t6KSC1DeZ2ejxS5AorB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col l3 m6 margin-bottom">
-                <div class="display-container">
-                    <iframe width="340" height="215" src="https://www.youtube.com/embed/videoseries?list=PL9w6GAz6eu4-L9t6KSC1DeZ2ejxS5AorB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col l3 m6 margin-bottom">
-                <div class="display-container">
-                    <iframe width="340" height="215" src="https://www.youtube.com/embed/videoseries?list=PL9w6GAz6eu4-L9t6KSC1DeZ2ejxS5AorB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col l3 m6 margin-bottom">
-                <div class="display-container">
-                    <iframe width="340" height="215" src="https://www.youtube.com/embed/videoseries?list=PL9w6GAz6eu4-L9t6KSC1DeZ2ejxS5AorB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
+        <div id="youtube-videos">
+            <!-- Dynamically Populated -->
         </div>
 
         <!-- About Section -->
