@@ -1062,6 +1062,10 @@ a {
     border-radius: 32px
 }
 
+.row-padding {
+    text-align: center;
+}
+
 .row-padding,
 .row-padding>.half,
 .row-padding>.third,
