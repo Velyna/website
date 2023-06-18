@@ -12,8 +12,7 @@ function generateVideoListRow(videoListElements) {
 
 function generateThumbnail(data) {
     try {
-        const videoID = data;
-        const embedURL = `https://www.youtube.com/embed/${videoID}?origin=https://www.velyna.net`;
+        const embedURL = `https://www.youtube.com/embed/${data}?origin=https://www.velyna.net`;
         const thumbnailTemplate = `
             <div class="col l3 m6 margin-bottom">
                 <div class="display-container">
@@ -38,6 +37,7 @@ function runYoutubeEmbed(data, youtubeVideoListID) {
     
         for (let i = 0; i <= 7; i++) {
             if (i>3) {
+                console.log('Data: ', data);
                 videoList2.push(generateThumbnail(data[i].videoID));
             } else {
                 videoList1.push(generateThumbnail(data[i].videoID));

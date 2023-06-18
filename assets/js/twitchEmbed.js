@@ -7,7 +7,7 @@ function runTwitchEmbed() {
     }
     
     function handleOnline() {
-        document.getElementById("twitch").classList.remove('hide');
+        // document.getElementById("twitch").classList.remove('hide');
         player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
         player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
         player.setMuted(false);
